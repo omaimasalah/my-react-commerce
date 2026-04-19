@@ -123,9 +123,9 @@ const Products = ({ item }) => {
           <CiHeart size={26} />
         </button>
 
-        <button className="w-[45px] h-[45px] text-xl text-gray-600 bg-white border border-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-all shadow-md">
+        {/* <button className="w-[45px] h-[45px] text-xl text-gray-600 bg-white border border-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-all shadow-md">
           <FaShare size={18} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

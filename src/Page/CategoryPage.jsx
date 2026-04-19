@@ -105,9 +105,9 @@ const CategoryPage = () => {
                 </span>
 
                 {/* share */}
-                <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
+                {/* <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
                   <FaShare />
-                </span>
+                </span> */}
 
               </div>
 

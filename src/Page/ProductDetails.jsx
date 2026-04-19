@@ -152,7 +152,12 @@ const isFavourite = favourites?.some(item => item.id === Number(id));
                 <FaStar />
                 <FaStar />
                 <FaStarHalfStroke />
-              </div>
+              </div> 
+
+
+
+               
+              <div>
               <button
                 onClick={handelcart}
                 className={`text-[18px] rounded-xl border-2 flex items-center justify-between w-[160px] p-2 transition duration-300 hover:scale-105
@@ -177,9 +182,10 @@ const isFavourite = favourites?.some(item => item.id === Number(id));
                 >
                   <CiHeart />
                 </button>
-                <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
+                </div>
+                {/* <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
                   <FaShare />
-                </span>
+                </span> */}
               </div>
             </div>
           </div>
