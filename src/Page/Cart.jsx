@@ -17,7 +17,7 @@ const Cart = () => {
   return (
     <PageTransation>
     <div className=" my-[50px]">
-      <div className="w-[45%] px-[20px] border  border-gray-400 rounded m-auto">
+      <div className="w-full sm:w-[90%] md:w-[75%] lg:w-[55%] xl:w-[45%] px-[20px] border  border-gray-400 rounded m-auto">
         <h1 className="  border-b py-5 mb-5 text-blue-500 text-3xl font-bold">
           order summary
         </h1>

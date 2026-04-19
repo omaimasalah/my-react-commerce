@@ -26,12 +26,12 @@ const Tophedder = () => {
 
         {/* icons */}
         
-        <div className="flex justify-end gap-4 ">
+        <div className="hidden md:flex  justify-end gap-4 ">
           {/* heart */}
           <Link to="/Favourites">
             <div className="relative flex items-center text-[25px]">
               <FaRegHeart />
-              <span className="absolute top-[-5px] right-[-10px] w-[20px] h-[20px] text-center text-[11px] rounded-full bg-blue-500 text-white">
+              <span className="absolute top-[-5px] right-[-10px] w-[20px] h-[20px] text-center text-[11px] rounded-full bg-red-500 text-white">
                 {favourites.length}
               </span>
             </div>
@@ -40,7 +40,7 @@ const Tophedder = () => {
           <Link to="/Cart">
             <div className="relative flex items-center text-[25px]">
               <FaShoppingCart />
-              <span className="absolute top-[-5px] right-[-10px] w-[20px] h-[20px] text-center text-[11px] rounded-full bg-blue-500 text-white">
+              <span className="absolute top-[-5px] right-[-10px] w-[20px] h-[20px] text-center text-[11px] rounded-full bg-red-500 text-white">
                 {cartItems.length}
               </span>
             </div>
