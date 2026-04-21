@@ -139,7 +139,7 @@ const BottomHeader = () => {
 
       {/*links of menu  */}
       <div
-        className={`fixed top-0 right-0 bg-inherit z-10 w-[120px] h-[80vh] transform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 bg-inherit z-10 w-[120px] h-full transfullform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <div onClick={() => setopen(false)}>
           <IoClose className="text-2xl text-white cursor-pointer" />
@@ -174,7 +174,7 @@ const BottomHeader = () => {
               className="px-2 py-1 hover:bg-blue-950 transition duration-500 rounded"
               key={link.id}
             >
-              <Link href={link.path}>{link.page} </Link>
+              <Link to={link.path}>{link.page} </Link>
             </li>
           ))}
 
