@@ -82,7 +82,7 @@ const Products = ({ item }) => {
   if (!item) return null;
 
   return (
-    <div className="group relative w-[250px] bg-white py-[25px] px-[15px] border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg">
+    <div className="group relative w-[250px] bg-white py-[25px] px-[15px] border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg mx-auto">
       <Link to={`/products/${item.id}`} className="relative z-10 block cursor-pointer">
         <span className={`${isInCart ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"} flex items-center pl-[20px] gap-2 text-blue-500 transition-all duration-500 font-bold text-sm h-6`}>
           <FaCheck className="text-green-500" /> in cart
