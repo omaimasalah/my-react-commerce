@@ -13,14 +13,14 @@ const Tophedder = () => {
 
 
         {/* logo */}
-        <div className="w-[130px]">
+        <div className="w-full sm:w-[130px]">
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
 
         {/* search */}
-        <div>
+        <div className="sm:my-5"> 
           <SearchBox />
         </div>
 

@@ -62,7 +62,7 @@ setsuggest([])
 
 
   return (
-    <div className='relative w-[400px]'>
+    <div className='relative w-full max-w-[450px]'>
       <form onSubmit={handleSubmit} className='relative flex items-center w-full'>
         <input
           value={search} 

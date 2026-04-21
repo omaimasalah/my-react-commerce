@@ -57,8 +57,8 @@ const BottomHeader = () => {
   }, []);
 
   return (
-    <div className="border-b bg-blue-500 shadow-md">
-      <div className="container mx-auto flex items-center justify-between gap-10 py-2 px-4">
+    <div className="w-full border-b bg-blue-500 shadow-md ">
+      <div className=" w-full max-w-[1400px] container mx-auto flex items-center justify-between gap-3 sm:gap-6">
         {/* زر تصنيفات المنتجات */}
         <div className="relative" ref={menuRef}>
           <div
@@ -66,7 +66,7 @@ const BottomHeader = () => {
             className="flex items-center gap-2 cursor-pointer px-4 py-2 rounded text-white hover:bg-blue-600 transition-all"
           >
             <IoMenuSharp size={20} />
-            <p className="font-semibold select-none">Browse Categories</p>
+            <p className="font-semibold select-none"> Categories</p>
             <IoIosArrowDown
               className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
             />

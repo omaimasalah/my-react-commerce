@@ -22,21 +22,19 @@ const Cart = () => {
           order summary
         </h1>
         {/* items */}
-        <div className="h-[350px] overflow-y-auto">
+        <div className="h-[350px] overflow-y-auto ">
           {cartItems.length === 0 ? (
             <p>your cart is empty</p>
           ) : (
             cartItems.map((item, index) => (
-              <div
-                className="flex gap-5 items-center justify-between h-[125px] border-b-2 last:border-b-0  pr-[20px] last"
-                key={index}
+              
+<div className="flex items-center justify-between gap-2 py-4 border-b-2 last:border-b-0"                key={index}
               >
-                <div className="flex items-center  gap-[20px]">
-                  <div className="w-[100px] flex justify-center items-center">
+<div className="flex items-center gap-3 flex-1 min-w-0">                  <div className="w-[100px] flex justify-center items-center">
                     <img className="h-[80px] w-auto" src={item.image} alt="" />
                   </div>
                   <div>
-                    <h1 className="mb-[10px] font-bold text-xl truncate w-[200px] text-blue-400 ">
+                    <h1 className="mb-[10px] font-bold text-xl truncate w-full sm:w-[200px] text-blue-400 ">
                       {item.title}
                     </h1>
                     <p>$ {item.price}</p>
@@ -65,7 +63,7 @@ const Cart = () => {
 
                 <button
                   onClick={() => remvecart(item.id)}
-                  className="text-[20px] cursor-pointer text-red-600 
+                  className="text-[20px] cursor-pointer text-red-600 shrink-0  text-lg
 hover:scale-125 hover:text-red-700 
 transition-all duration-300"
                 >

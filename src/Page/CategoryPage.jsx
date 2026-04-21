@@ -28,22 +28,19 @@ const CategoryPage = () => {
 
   return (
     <PageTransation>
-    <div className='container mx-auto'>
+    <div className=' container mx-auto'>
 
-        <h2 className=' inline-block text-3xl font-bold mb-10 mt-10 capitalize text-blue-500 border-b-4 pb-4 border-blue-500  '>{category}</h2>
+        <h2 className=' inline-block text-3xl font-bold mb-10 mt-10 capitalize text-blue-500 border-b-4 pb-2 border-blue-500   '>{category}</h2>
 
-      <div className='flex  gap-10 items-center'>
 
-<div className='flex flex-wrap  justify-between items-center  gap-4'>
-        {categoryProducts.map((product) => {
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full ">       {categoryProducts.map((product) => {
 
           const isInCart = cart.includes(product.id)
 
           return (
             <div
               key={product.id}
-              className='group relative w-[200px] bg-white py-[10px] px-[15px] border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg'
-            >
+className="group relative w-full bg-white p-3 border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg"            >
 
               <Link
                 to={`/products/${product.id}`}
@@ -56,8 +53,8 @@ const CategoryPage = () => {
                 </span>
 
                 {/* image */}
-                <div className="relative h-[180px] px-[20px] mt-[30px] mb-[30px] flex justify-center items-center">
-                  <img className="h-[140px]" src={product.image} alt={product.title} />
+                <div className="relative h-[160px] px-2 mt-8 mb-8 flex justify-center items-center">
+                  <img className="h-[120px]" src={product.image} alt={product.title} />
                 </div>
 
                 {/* title */}
@@ -69,7 +66,7 @@ const CategoryPage = () => {
                 </h3>
 
                 {/* stars */}
-                <div className="my-[15px] flex gap-2 text-[#F5B027] text-[18px]">
+                <div className="my-4 flex gap-2 text-[#F5B027] text-[18px]">
                   <FaStar />
                   <FaStar />
                   <FaStar />
@@ -117,7 +114,7 @@ const CategoryPage = () => {
 </div>
       </div>
 
-    </div>
+
     </PageTransation>
   )
 }
