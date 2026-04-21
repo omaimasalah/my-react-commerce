@@ -128,7 +128,7 @@ const BottomHeader = () => {
           )}
         </div>
         {/* menu icons bars and close*/}
-        <div onClick={() => setopen(!open)} className="text-white md:hidden">
+        <div onClick={() => setopen(!open)} className="text-white md:hidden ">
           {!open ? (
             <FaBars className=" text-2xl text-white cursor-pointer" />
           ) : (
@@ -139,7 +139,7 @@ const BottomHeader = () => {
 
       {/*links of menu  */}
       <div
-        className={`fixed top-0 right-0 bg-inherit z-10 w-[120px] h-full transfullform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 bg-inherit z-20 w-[120px] h-full transfullform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <div onClick={() => setopen(false)}>
           <IoClose className="text-2xl text-white cursor-pointer" />
