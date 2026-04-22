@@ -156,8 +156,8 @@ const isFavourite = favourites?.some(item => item.id === Number(id));
 
 
 
-               
-              <div>
+               <div className="flex gap-4 mt-[30px]">
+              
               <button
                 onClick={handelcart}
                 className={`text-[18px] rounded-xl border-2 flex items-center justify-between w-[160px] p-2 transition duration-300 hover:scale-105
@@ -171,7 +171,7 @@ const isFavourite = favourites?.some(item => item.id === Number(id));
                 {isInCart ? "Item in Cart" : "Add to Cart"}
                 <FaShoppingCart />
               </button>
-              <div className="flex gap-3 mt-[30px]">
+              
                 <button
                   onClick={handleFavourites}
                   className={`w-[40px] h-[40px] text-2xl rounded-full flex justify-center items-center cursor-pointer transition-all border shadow-sm ${
@@ -183,14 +183,15 @@ const isFavourite = favourites?.some(item => item.id === Number(id));
                   <CiHeart />
                 </button>
                 </div>
+                </div>
                 {/* <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
                   <FaShare />
                 </span> */}
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        
+    
     </PageTransation>
   );
 };

@@ -16,13 +16,13 @@ const Favourites = () => {
           your favourites
         </h2>
 
-        <div className='flex gap-10 items-center'>
+<div className="">  
           {/* 1. بداية الشرط: لو المفضلة فاضية */}
           {favourites.length === 0 ? (
             <p className="text-gray-500 text-xl">no favourites products</p>
           ) : (
             /* 2. لو فيه منتجات، بنعرض الـ div اللي جواه الـ map */
-            <div className='flex flex-wrap justify-start items-center gap-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full'>
               {favourites.map((product) => {
                 // بنصلح الـ isInCart عشان تدور جوه الـ cartItems اللي في الـ Context
                 const isInCart = cartItems?.some((item) => item.id === product.id);
