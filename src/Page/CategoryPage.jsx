@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { FaCheck, FaStar, FaCartArrowDown, FaShare } from "react-icons/fa"
 import { FaStarHalfStroke } from "react-icons/fa6"
 import { CiHeart } from "react-icons/ci"
 import PageTransation from "../Componants/PageTransation";
+import { CartContext } from "./CartConText";
 
 
 const CategoryPage = () => {
-
+const { favourites, addTOfavourites,removeFavourites } = useContext(CartContext);
   const { category } = useParams()
+  const navigate = useNavigate();
 
   const [categoryProducts, setCategoryProducts] = useState([])
   const [cart, setCart] = useState([])
@@ -26,9 +28,31 @@ const CategoryPage = () => {
     setCart((prev) => [...prev, product.id])
   }
 
+// اضافه للمفضلة
+  const handleFavourites = (e,product) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!product) return;
+    const isFavourite = favourites?.some(
+  (fav) => fav.id === product.id
+)
+
+    if (!isFavourite) {
+    addTOfavourites(product);
+     
+ } else {
+      // حذف من المفضلة
+      removeFavourites(product.id);
+   
+    }
+  };
+
+
+
+
   return (
     <PageTransation>
-    <div className=' container mx-auto'>
+    <div className=' container mx-auto px-8'>
 
         <h2 className=' inline-block text-3xl font-bold mb-10 mt-10 capitalize text-blue-500 border-b-4 pb-2 border-blue-500   '>{category}</h2>
 
@@ -38,7 +62,9 @@ const CategoryPage = () => {
     {categoryProducts.map((product) => {
 
           const isInCart = cart.includes(product.id)
-
+const isFavourite = favourites?.some(
+  (fav) => fav.id === product.id
+);
           return (
             <div
               key={product.id}
@@ -99,8 +125,12 @@ className="group relative w-full bg-white p-3 border-2 rounded-xl hover:border-b
                 </span>
 
                 {/* wishlist */}
-                <span className="w-[40px] h-[40px] text-xl text-blue-600 bg-slate-200 rounded-full flex justify-center items-center cursor-pointer hover:bg-blue-500 hover:text-white transition-all">
-                  <CiHeart size={24} />
+                <span  onClick={(e) => handleFavourites(e, product)}
+
+ className={`w-[45px] h-[45px] text-xl rounded-full flex justify-center items-center cursor-pointer transition-all border shadow-md ${
+            isFavourite ? "bg-red-500 text-white border-red-500" : "bg-white text-red-500 border-slate-200 hover:bg-red-500 hover:text-white"
+          }`}
+        >                  <CiHeart size={24} />
                 </span>
 
                 {/* share */}

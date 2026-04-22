@@ -11,7 +11,7 @@ const Favourites = () => {
 
   return (
     <PageTransation>
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-8 '>
         <h2 className='inline-block text-3xl font-bold mb-10 mt-10 capitalize text-blue-500 border-b-4 pb-4 border-blue-500'>
           your favourites
         </h2>
@@ -22,7 +22,7 @@ const Favourites = () => {
             <p className="text-gray-500 text-xl">no favourites products</p>
           ) : (
             /* 2. لو فيه منتجات، بنعرض الـ div اللي جواه الـ map */
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 '>
               {favourites.map((product) => {
                 // بنصلح الـ isInCart عشان تدور جوه الـ cartItems اللي في الـ Context
                 const isInCart = cartItems?.some((item) => item.id === product.id);
@@ -30,8 +30,7 @@ const Favourites = () => {
                 return (
                   <div
                     key={product.id}
-                    className='group relative w-[220px] bg-white py-[15px] px-[15px] border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg'
-                  >
+className='group relative w-full bg-white py-6 px-6 border-2 rounded-xl hover:border-blue-500 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg'                  >
                     <Link to={`/products/${product.id}`} className="relative z-10 block cursor-pointer">
                       
                       {/* In Cart Label */}
@@ -68,9 +67,9 @@ const Favourites = () => {
                       >
                         <FaCartArrowDown />
                       </button>
-                      <button className="w-[40px] h-[40px] text-xl bg-white text-red-500 border rounded-full flex justify-center items-center shadow-md">
+                      {/* <button className="w-[40px] h-[40px] text-xl bg-white text-red-500 border rounded-full flex justify-center items-center shadow-md">
                         <CiHeart size={24} />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 ); 
