@@ -32,13 +32,13 @@ const HeroSlider = () => {
 
   if (loading)
     return (
-      <div className="h-[500px] flex justify-center items-center bg-gray-100">
+      <div className="h-[350px] sm:h-[450px] md:h-[550px] flex justify-center items-center bg-gray-100">
         Loading Slider...
       </div>
     );
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] mb-10">
+    <div className="w-full h-[600px] sm:h-[600px] md:h-[600px] lg:h-[600px] mb-10 overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade" // تأثير التلاشي يعطي فخامة للموقع
@@ -51,37 +51,37 @@ const HeroSlider = () => {
       >
         {products.map((item) => (
           <SwiperSlide key={item.id} >
-            <div className="relative  w-full h-full  items-center bg-slate-50">
+            <div className="relative w-full h-full bg-gradient-to-r from-slate-50 to-blue-50 flex items-center">
               {/* محتوى النص */}
-              <div className="container mx-auto px-10 flex flex-col md:flex-row items-center justify-between">
+              <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 items-center gap-6 h-full">
                 <div className="w-full md:w-1/2 text-left z-10">
-                  <span className="text-blue-500 font-bold uppercase tracking-widest mb-4 block">
+                  <span className="text-blue-500 text-xl sm:text-2xl font-bold uppercase tracking-widest block mb-3">
                     New Arrival
                   </span>
-                  <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 mb-6 leading-tight">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight line-clamp-2">
                     {item.title}
                   </h1>
-                  <p className="text-gray-600 text-lg mb-8 max-w-md line-clamp-2">
+                  <p className="text-sm sm:text-base text-gray-600 mb-6 line-clamp-2 max-w-lg mx-auto md:mx-0">
                     {item.description}
                   </p>
                   <Link
                     to={`/products/${item.id}`}
-                    className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200"
+                    className="inline-block bg-blue-600 text-white px-5  py-3 mx-10 rounded-full font-bold hover:bg-blue-700 hover:scale-105 duration-300"
                   >
                     Shop Now - ${item.price}
                   </Link>
                 </div>
 
-                <div className="w-full md:w-1/2 flex justify-end mt-10 md:mt-0">
+                <div className="order-1 md:order-2 flex justify-center md:justify-end">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="max-h-[350px] md:max-h-[450px] object-contain drop-shadow-2xl"
+                    className="max-h-[180px] sm:max-h-[250px] md:max-h-[380px] object-contain"
                   />
                 </div>
               </div>
 
-              <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-100/50 -skew-x-12 transform translate-x-20"></div>
+              <div className="hidden md:block absolute top-0 right-0 w-1/3 h-full bg-blue-100/50 -skew-x-12 translate-x-20"></div>
             </div>
           </SwiperSlide>
         ))}
