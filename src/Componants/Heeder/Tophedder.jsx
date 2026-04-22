@@ -9,18 +9,18 @@ const Tophedder = () => {
   const { cartItems, favourites } = useContext(CartContext);
 
   return (
-    <div className="container mx-auto  grid grid-cols-1  md:grid-col-2 lg:grid-cols-3 justify-between items-center">
+    <div className="container mx-auto  grid grid-cols-2  md:grid-cols-3 lg:grid-cols-3 justify-between items-center">
 
 
         {/* logo */}
-        <div className="w-60  md:w-[130px] ">
+        <div className="w-36  ">
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
 
         {/* search */}
-        <div className="sm:my-5"> 
+        <div className=""> 
           <SearchBox />
         </div>
 
